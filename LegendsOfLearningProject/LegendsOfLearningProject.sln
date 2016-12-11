@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegendsOfLearningProject.Plugins", "LegendsOfLearningProject.Plugins.csproj", "{6C662CEB-3DEC-E248-1EF2-423C94C5A11D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegendsOfLearningProject", "LegendsOfLearningProject.csproj", "{04C74395-8E06-4ABC-581F-292804FF6981}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegendsOfLearningProject.Editor.Plugins", "LegendsOfLearningProject.Editor.Plugins.csproj", "{F55B5842-462F-AC22-AE32-89912C0F9F7C}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{6C662CEB-3DEC-E248-1EF2-423C94C5A11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C662CEB-3DEC-E248-1EF2-423C94C5A11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C662CEB-3DEC-E248-1EF2-423C94C5A11D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04C74395-8E06-4ABC-581F-292804FF6981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04C74395-8E06-4ABC-581F-292804FF6981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04C74395-8E06-4ABC-581F-292804FF6981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04C74395-8E06-4ABC-581F-292804FF6981}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F55B5842-462F-AC22-AE32-89912C0F9F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F55B5842-462F-AC22-AE32-89912C0F9F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F55B5842-462F-AC22-AE32-89912C0F9F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU

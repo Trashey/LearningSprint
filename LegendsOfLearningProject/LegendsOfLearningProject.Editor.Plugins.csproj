@@ -157,6 +157,10 @@
       <Project>{6C662CEB-3DEC-E248-1EF2-423C94C5A11D}</Project>
       <Name>LegendsOfLearningProject.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="LegendsOfLearningProject.csproj">
+      <Project>{04C74395-8E06-4ABC-581F-292804FF6981}</Project>
+      <Name>LegendsOfLearningProject</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
