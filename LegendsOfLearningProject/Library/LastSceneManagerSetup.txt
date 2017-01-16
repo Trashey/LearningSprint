@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/prototype scene.unity
+- path: Assets/Scenes/PuzzleGameScene.unity
   isLoaded: 1
   isActive: 1
