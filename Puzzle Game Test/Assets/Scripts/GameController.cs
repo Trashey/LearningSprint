@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -26,19 +27,28 @@ public class GameController : MonoBehaviour {
 
     private string firstGuessPuzzle, secondGuessPuzzle;
 
+    
     void Awake()
     {
-        //Loads all the sprites in the path Candy
         puzzles = Resources.LoadAll<Sprite>("Sprites/Candy");
+        //Loads all the sprites in the path Candy
+
+
     }
 
 	void Start()
     {
+
+        StartCards();
+    }
+
+    void StartCards()
+    {
+       
         GetButtons();
         AddListeners();
         AddGamePuzzles();
         Shuffle(gamePuzzles);
-
         //amount of correct guess to win the game
         GameGuesses = gamePuzzles.Count / 2;
     }
@@ -139,9 +149,10 @@ public class GameController : MonoBehaviour {
     IEnumerator CheckIfThePuzzlesMatch()
     {
         //wait for x amount of seconds
-        yield return new WaitForSeconds(1f);
-
-        if (firstGuessPuzzle == secondGuessPuzzle){
+        //   yield return new WaitForSeconds(1f);
+        //  if (firstGuessPuzzle == secondGuessPuzzle)
+        if (firstGuessPuzzle == secondGuessPuzzle && firstGuessIndex != secondGuessIndex)
+          {
             yield return new WaitForSeconds(.5f);
 
             //make the buttons that were correctly clicked not interactable anymore
@@ -164,7 +175,7 @@ public class GameController : MonoBehaviour {
             btns[secondGuessIndex].image.sprite = bgImage;
         }
 
-        yield return new WaitForSeconds(.5f);
+     //   yield return new WaitForSeconds(.5f);
 
         firstGuess = false;
         secondGuess = false;
@@ -177,9 +188,37 @@ public class GameController : MonoBehaviour {
         {
             Debug.Log("Game Finished");
             Debug.Log("If took you " + countGuesses + " many guess(es) to finish the game");
+
+            ////if ( GameObject.Find("GameController").GetComponent<AddButtons>().button_amount == 16)
+            ////{
+            ////    Debug.Log("GG");
+            ////    Application.Quit();
+            ////}
+            ////  GameObject.Find("GameController").GetComponent<AddButtons>();
+            ////    GameObject.Find("GameController").GetComponent<AddButtons>().button_amount *= 2;
+            //GameObject.Find("GameController").GetComponent<AddButtons>().StartButtons();
+            //StartCards();
+            // Reset();
+
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                Debug.Log("GG");
+                  Application.Quit();
+            }
+            else {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
+
     }
 
+
+    void Reset()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //Application.LoadLevel(Application.loadedLevel);
+    }
 
     //Shuffle up the order of the sprites
     void Shuffle(List<Sprite> list)

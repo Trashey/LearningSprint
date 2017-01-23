@@ -13,11 +13,19 @@ public class AddButtons : MonoBehaviour {
     [SerializeField]
     private GameObject btn;
 
+   public int button_amount;
 
     //Awake is used instead of start in order to setup the components on the object it's assigned to.
     void Awake()
     {
-        for (int i = 0; i < 8; i++)
+        StartButtons();
+     
+    }
+
+    public void StartButtons()
+    {
+        //button_amount = 4;
+        for (int i = 0; i < button_amount; i++)
         {
             //create the button
             GameObject button = Instantiate(btn);
@@ -27,6 +35,7 @@ public class AddButtons : MonoBehaviour {
             button.transform.SetParent(puzzleField, false);
         }
     }
+
 
 	//// Use this for initialization
 	//void Start () {
